@@ -17,7 +17,7 @@ Vue.use(iView)
 Vue.use(VueI18n)
 Vue.locale = () => {}
 const i18n = new VueI18n({
-  locale: window.localStorage.getItem('language'), // 语言标识
+  locale: window.localStorage.getItem('language') === null ? 'zh' : window.localStorage.getItem('language'), // 语言标识
   messages: {
     'zh': Object.assign(zh, Zh), // 简体中文
     'en': Object.assign(en, En), // 英文
